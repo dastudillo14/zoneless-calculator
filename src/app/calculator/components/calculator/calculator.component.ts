@@ -34,7 +34,6 @@ export class CalculatorComponent {
   public lastOperator = computed(() => this.calculatorService.lastOperator());
 
   handleClick(key: string) {
-    console.log(key);
     this.calculatorService.constructNumber(key)
   }
 
@@ -43,7 +42,7 @@ export class CalculatorComponent {
     const { key } = event;
 
     const keyEquivalents: Record<string, string> = {
-      Escape: 'C',
+      'Escape': 'C',
       Clear: 'C',
       '*': 'x',
       '/': '÷',
@@ -52,7 +51,7 @@ export class CalculatorComponent {
 
     const newKey = keyEquivalents[key] ?? key;
 
-    this.handleClick(key);
+    this.handleClick(newKey);
     this.calculatorButtons().forEach((button) => {
       button.keyboardPressedStyle(newKey);
     });

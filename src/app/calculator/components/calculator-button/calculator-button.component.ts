@@ -53,7 +53,6 @@ export class CalculatorButtonComponent implements OnInit {
   // }
 
   ngOnInit(): void {
-    console.log(this.isCommand());
   }
 
   keyboardPressedStyle(key: string) {
